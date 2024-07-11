@@ -1,8 +1,7 @@
 /**
  * Internal Dependencies.
  */
-import { HEADER_FOOTER_ENDPOINT } from "../src/utils/constants/endpoints";
-import Header from "../src/components/header/index.jsx";
+import { HEADER_FOOTER_ENDPOINT } from "../utils/endpoints";
 
 /**
  * External Dependencies.
@@ -12,13 +11,11 @@ import axios from "axios";
 const Home = async () => {
   const data = await getStaticProps();
   return (
-    <div>
-      <h1>Data fetched with App Router</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+    <>
+      <h1>Home Page</h1>
+    </>
   );
 };
-
 export default Home;
 
 const getStaticProps = async () => {
