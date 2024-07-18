@@ -1,20 +1,36 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        satoshi: ["Satoshi", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
+      colors: {
+        "accent-1": "#FAFAFA",
+        "accent-2": "#EAEAEA",
+        "accent-7": "#333",
+        success: "#0070f3",
+        cyan: "#79FFE1",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      spacing: {
+        28: "7rem",
+      },
+      letterSpacing: {
+        tighter: "-.04em",
+      },
+      lineHeight: {
+        tight: 1.2,
+      },
+      fontSize: {
+        "5xl": "2.5rem",
+        "6xl": "2.75rem",
+        "7xl": "4.5rem",
+        "8xl": "6.25rem",
+      },
+      boxShadow: {
+        small: "0 5px 10px rgba(0, 0, 0, 0.12)",
+        medium: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
     },
   },
