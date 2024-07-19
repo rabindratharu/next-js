@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import MenuFragment from "./fragments";
+import MenuFragment from "./fragments/menus";
 
 export const GET_MENUS = gql`
   query getMenus {
