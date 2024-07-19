@@ -1,5 +1,5 @@
 import client from "../src/apollo/client";
-import { GET_MENUS } from "../src/queries/get-menus";
+import { GET_POSTS } from "../src/queries/posts/get-posts";
 
 export default function Home({ data }) {
   console.log(data);
@@ -15,7 +15,7 @@ export default function Home({ data }) {
 
 export async function getStaticProps(context) {
   const { data, errors } = await client.query({
-    query: GET_MENUS,
+    query: GET_POSTS,
   });
 
   const defaultProps = {
