@@ -1,17 +1,14 @@
-
-import { gql } from '@apollo/client'
-import MenuFragment from '../fragments/menus'
+import { gql } from "@apollo/client";
 import SeoFragment from "../fragments/seo";
-import {HeaderFooter} from "../get-menus";
-import ImageFragment from "../fragments/image";
-import PostFragment from '../fragments/post';
+import { HeaderFooter } from "../get-menus";
+import PostFragment from "../fragments/post";
 
 /**
  * Get News Posts
  *
  */
 export const GET_NEWS = gql`
- query GET_NEWS( $uri: String, $first: Int, $after: String ) {
+ query getNews( $uri: String, $first: Int, $after: String ) {
  ${HeaderFooter}
   page: pageBy(uri: $uri) {
     id
@@ -38,8 +35,6 @@ export const GET_NEWS = gql`
     }
   }
  }
- ${MenuFragment}
- ${ImageFragment}
  ${SeoFragment}
  ${PostFragment}
  `;

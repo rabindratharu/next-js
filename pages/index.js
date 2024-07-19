@@ -1,26 +1,28 @@
 import client from "../src/apollo/client";
-import { GET_POSTS } from "../src/queries/posts/get-posts";
+import Layout from "../src/components/layout";
+import { GET_MENUS } from "../src/queries/get-menus";
 
 export default function Home({ data }) {
-  console.log(data);
   return (
     <>
-      <div>
-        <h1>Posts</h1>
-        <ul></ul>
-      </div>
+      <Layout data={data}>Layout</Layout>
     </>
   );
 }
 
 export async function getStaticProps(context) {
   const { data, errors } = await client.query({
-    query: GET_POSTS,
+    query: GET_MENUS,
   });
 
   const defaultProps = {
     props: {
-      data: data || {},
+      data: {
+        menus: {
+          headerMenu: data?.headerMenu?.edges,
+          footerMenu: data?.footerMenu?.edges,
+        },
+      },
     },
     /**
      * Revalidate means that if a new request comes to server, then every 1 sec it will check
