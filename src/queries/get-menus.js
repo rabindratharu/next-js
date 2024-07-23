@@ -3,7 +3,7 @@ import MenuFragment from "./fragments/menus";
 
 export const GET_MENUS = gql`
   query getMenus {
-    headerMenu: menuItems(where: { location: EXPANDED, parentId: "0" }) {
+    headerMenu: menuItems(where: { location: PRIMARY, parentId: "0" }) {
       edges {
         node {
           ...MenuFragment
