@@ -19,6 +19,8 @@ export default function Component(props) {
   const primaryMenu = props?.data?.headerMenuItems?.nodes ?? [];
   const footerMenu = props?.data?.footerMenuItems?.nodes ?? [];
   const { name, posts } = props.data.nodeByUri;
+
+  console.log(posts);
   return (
     <>
       <SEO title={siteTitle} description={siteDescription} />
