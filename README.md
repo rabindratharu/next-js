@@ -34,3 +34,44 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Register New Fields in WP GraphQl
+
+```
+add_action( 'graphql_register_types', function() {
+	// Site Logo
+	register_graphql_field( 'RootQuery', 'siteLogo', [
+		'type' 			=> 'MediaItem',
+		'description' 	=> __( 'The logo set in the customizer', 'your-textdomain' ),
+		'resolve' 		=> function() {
+
+			$logo_id = get_theme_mod( 'custom_logo' );
+
+			if ( ! isset( $logo_id ) || ! absint( $logo_id ) ) {
+				return null;
+			}
+
+			$media_object = get_post( $logo_id );
+			return new \WPGraphQL\Model\Post( $media_object );
+
+		}
+	] );
+	// Fav Icon
+	register_graphql_field( 'RootQuery', 'favIcon', [
+		'type' 			=> 'MediaItem',
+		'description' 	=> __( 'The favicon set in the customizer', 'your-textdomain' ),
+		'resolve' 		=> function() {
+
+			$favicon_id = get_option( 'site_icon' );
+
+			if ( ! isset( $favicon_id ) || ! absint( $favicon_id ) ) {
+				return null;
+			}
+
+			$media_object = get_post( $favicon_id );
+			return new \WPGraphQL\Model\Post( $media_object );
+
+		}
+	] );
+} );
+```

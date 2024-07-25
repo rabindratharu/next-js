@@ -7,6 +7,12 @@ export const HeaderFooter = `
     title
     description
   }
+  siteLogo: siteLogo {
+    sourceUrl
+  }
+  favIcon: favIcon {
+    sourceUrl
+  }
   headerMenus: menuItems(where: {location: PRIMARY, parentId: "0"}) {
     edges {
       node {
