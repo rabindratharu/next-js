@@ -2,19 +2,20 @@ import { isEmpty } from "lodash";
 import PropTypes from "prop-types";
 
 import Nav from "./nav";
-const Header = ({ headerMenus }) => {
+const Header = ({ header, headerMenus }) => {
   if (isEmpty(headerMenus)) {
     return null;
   }
 
   return (
     <header>
-      <Nav headerMenus={headerMenus} />
+      <Nav header={header} headerMenus={headerMenus} />
     </header>
   );
 };
 
 Header.propTypes = {
+  header: PropTypes.object,
   headerMenus: PropTypes.array,
 };
 

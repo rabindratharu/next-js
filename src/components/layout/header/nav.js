@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 import { isCustomPageUri } from "../../../utils/slug";
 
-const Nav = ({ headerMenus }) => {
+const Nav = ({ header, headerMenus }) => {
   if (isEmpty(headerMenus)) {
     return null;
   }
@@ -14,6 +14,24 @@ const Nav = ({ headerMenus }) => {
 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+      <div className="flex items-center flex-shrink-0 text-white mr-6">
+        <Link href="/">
+          <img
+            src={header?.siteLogo?.sourceUrl ?? ""}
+            alt=""
+            width="48"
+            height="48"
+            className="mr-4"
+          />
+        </Link>
+        <div className="flex flex-col items-start justify-start">
+          <span className="font-semibold text-xl tracking-tight">
+            {header?.siteInfo?.title}
+          </span>
+          <span>{header?.siteInfo?.description}</span>
+        </div>
+      </div>
+
       <div className="block lg:hidden">
         <button
           onClick={() => setMenuVisibility(!isMenuVisible)}

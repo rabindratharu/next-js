@@ -3,6 +3,7 @@ import Layout from "../src/components/layout";
 import { GET_MENUS } from "../src/queries/get-menus";
 
 export default function Page({ data }) {
+  // console.log(data);
   return <Layout data={data}></Layout>;
 }
 
@@ -14,9 +15,14 @@ export async function getStaticProps() {
   return {
     props: {
       data: {
+        header: {
+          siteInfo: data?.siteInfo || [],
+          siteLogo: data?.siteLogo || [],
+          favIcon: data?.favIcon || [],
+        },
         menus: {
-          headerMenus: data?.headerMenus?.edges,
-          footerMenus: data?.footerMenus?.edges,
+          headerMenus: data?.headerMenus?.edges || [],
+          footerMenus: data?.footerMenus?.edges || [],
         },
       },
     },
