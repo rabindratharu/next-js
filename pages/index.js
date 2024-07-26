@@ -14,17 +14,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: {
-        header: {
-          siteInfo: data?.siteInfo || [],
-          siteLogo: data?.siteLogo || [],
-          favIcon: data?.favIcon || [],
-        },
-        menus: {
-          headerMenus: data?.headerMenus?.edges || [],
-          footerMenus: data?.footerMenus?.edges || [],
-        },
-      },
+      data: data || {},
     },
     /**
      * Revalidate means that if a new request comes to server, then every 1 sec it will check

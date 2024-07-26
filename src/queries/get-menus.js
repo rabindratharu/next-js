@@ -3,17 +3,13 @@ import MenuFragment from "./fragments/menus";
 
 // Define the GraphQL query for the header and footer menus.
 export const HeaderFooter = `
-  siteInfo: generalSettings {
-    title
-    description
+   header: getHeader {
+    favicon
+    siteLogoUrl
+    siteTagLine
+    siteTitle
   }
-  siteLogo: siteLogo {
-    sourceUrl
-  }
-  favIcon: favIcon {
-    sourceUrl
-  }
-  headerMenus: menuItems(where: {location: PRIMARY, parentId: "0"}) {
+  headerMenus: menuItems(where: {location: HCMS_MENU_HEADER, parentId: "0"}) {
     edges {
       node {
         ...MenuFragment
@@ -27,11 +23,20 @@ export const HeaderFooter = `
       }
     }
   }
-  footerMenus: menuItems(where: {location: FOOTER, parentId: "0"}) {
+  footerMenus: menuItems(where: {location: HCMS_MENU_FOOTER, parentId: "0"}) {
     edges {
       node {
         ...MenuFragment
       }
+    }
+  }
+  footer: getFooter {
+    copyrightText
+    sidebarOne
+    sidebarTwo
+    socialLinks {
+      iconName
+      iconUrl
     }
   }
 `;
