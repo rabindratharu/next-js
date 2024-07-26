@@ -12,7 +12,6 @@ import {
 import { sanitize } from "../src/utils/miscellaneous";
 
 const Page = ({ data }) => {
-  console.log(data);
   const router = useRouter();
 
   // If the page is not yet generated, this will be displayed

@@ -1,20 +1,24 @@
 import Head from "next/head";
 import Header from "./header";
 import Footer from "./footer";
-
+import Seo from "../seo";
 import { isEmpty } from "lodash";
 
 const Layout = ({ data, isPost, children }) => {
-  const { header, footer, headerMenus, footerMenus } = data || {};
+  const { page, header, footer, headerMenus, footerMenus } = data || {};
 
   // If it does not have either post or page.
-  //   if (isEmpty(page) && isEmpty(post) && isEmpty(posts)) {
-  //     return null;
-  //   }
+  if (isEmpty(page)) {
+    return null;
+  }
+
+  const seo = page?.seo ?? {};
+  const uri = page?.uri ?? {};
 
   console.log(data);
   return (
     <>
+      <Seo seo={seo} uri={uri} />
       <Head>
         <link rel="shortcut icon" href={header?.favicon ?? ""} />
       </Head>
