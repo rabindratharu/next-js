@@ -1,9 +1,8 @@
 import { gql } from "@apollo/client";
 import MenuFragment from "./fragments/menus";
 
-// Define the GraphQL query for the header and footer menus.
 export const HeaderFooter = `
-   header: getHeader {
+  header: getHeader {
     favicon
     siteLogoUrl
     siteTagLine
