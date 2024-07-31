@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Faust Scaffold
 
-## Getting Started
+This repository contains a starter scaffolding to get you up and running quickly on [WP Engine's Atlas platform](https://wpengine.com/atlas/) with a WordPress site skeleton for more advanced developers.
 
-First, run the development server:
+# Installation
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Run `npm i`
+Change the `.env.local.sample` file's name to `.env.local.` 
+Run `npm run build`
+Run `npm run generate`
+Run `npm run start`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+While making changes to the scaffold, run `npm run dev` in another terminal window.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## For more information
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+For more information on this Blueprint please check out the following sources:
 
-## Learn More
+- [WP Engine's Atlas Platform](https://wpengine.com/atlas/)
+- [Faust.js](https://faustjs.org)
+- [WPGraphQL](https://www.wpgraphql.com)
+- [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/)
+- [WP Engine's Atlas developer community](https://developers.wpengine.com)
 
-To learn more about Next.js, take a look at the following resources:
+### Contributor License Agreement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All external contributors to WP Engine products must have a signed Contributor License Agreement (CLA) in place before the contribution may be accepted into any WP Engine codebase.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. [Submit your name and email](https://wpeng.in/cla/)
+2. 📝 Sign the CLA emailed to you
+3. 📥 Receive copy of signed CLA
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+❤️ Thank you for helping us fulfill our legal obligations in order to continue empowering builders through headless WordPress.
